@@ -1,21 +1,21 @@
-let number = getRandomInt;
+let btnPar = document.getElementById('par');
+let btnImpar = document.getElementById('impar');
+let resultado = document.getElementById('resultado');
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  
-  console.log(getRandomInt(1, 6)); // Gera um número aleatório entre 1 e 6
+function jogar(escolhaJogador) {
+    let resultadoDado = Math.floor(Math.random() * 6) + 1;
 
-if number / 2  % 0: 
+    if ((resultadoDado % 2 === 0 && escolhaJogador === 'par') || (resultadoDado % 2 !== 0 && escolhaJogador === 'ímpar')) {
+        resultado.textContent = "Resultado do dado: " + resultadoDado + ". Você ganhou!";
+    } else {
+        resultado.textContent = "Resultado do dado: " + resultadoDado + ". Você perdeu!";
+    }
+}
 
-/*while (continuar) {
-    let opcao = prompt("Escolha uma opção:\n1. Par\n2. Impar);
+btnPar.addEventListener('click', function() {
+    jogar('par');
+});
 
-    switch (opcao) {
-        case '1':
-       
-        default:
-            alert("Opção inválida. Por favor, escolha uma opção de 1 e 2.");
-*/
+btnImpar.addEventListener('click', function() {
+    jogar('impar');
+});
